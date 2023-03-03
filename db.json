@@ -1,0 +1,43 @@
+{
+  "enquiry": [
+    {
+      "firstName": "Rintu",
+      "lastName": "V.A",
+      "email": "rintuva000@gmail.com",
+      "mobile": 6282617139,
+      "weight": 67,
+      "height": 1.6,
+      "bmi": 0.39062499999999994,
+      "bmiResult": "Underweight",
+      "gender": "Male",
+      "requireTrainer": "Yes",
+      "package": "Quarterly",
+      "important": [
+        "Enery And Endurance",
+        "Building Lean Muscle"
+      ],
+      "haveGymBefore": "Yes",
+      "enquiryDate": "2023-02-20T18:30:00.000Z",
+      "id": 1
+    },
+    {
+      "firstName": "Febin",
+      "lastName": "B",
+      "email": "rintuva000@gmail.com",
+      "mobile": 6282617137,
+      "weight": 123,
+      "height": 2.4,
+      "bmi": 21.354166666666668,
+      "bmiResult": "Normal",
+      "gender": "Male",
+      "requireTrainer": "No",
+      "package": "Monthly",
+      "important": [
+        "Fitness"
+      ],
+      "haveGymBefore": "",
+      "enquiryDate": "2023-02-26T18:30:00.000Z",
+      "id": 2
+    }
+  ]
+}
