@@ -6,6 +6,8 @@ import {MatSort} from '@angular/material/sort';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 import { NgConfirmService } from 'ng-confirm-box';
+import { NgToastService } from 'ng-angular-popup';
+
 @Component({
   selector: 'app-registration-list',
   templateUrl: './registration-list.component.html',
@@ -18,7 +20,7 @@ export class RegistrationListComponent implements OnInit{
   @ViewChild(MatSort) sort!:MatSort;
 
   displayedColumns: string[] = ['id','firstName','lastName','email','mobile','bmiResult','gender','package','enquiryDate','action'];
-  constructor(private api:ApiService , private router:Router, private confirm:NgConfirmService){
+  constructor(private api:ApiService , private router:Router, private confirm:NgConfirmService,private toast:NgToastService){
 
   }
   ngOnInit(): void {
@@ -45,7 +47,18 @@ export class RegistrationListComponent implements OnInit{
 
   }
   delete(id:number){
-   
+    this.confirm.showConfirm("Are You Sure Want To Delete?",
+    ()=>{
+      this.api.deleteRegistration(id)
+      .subscribe(res=>{
+        this.toast.success({detail:"SUCCESS", summary:"Deleted Successfully" , duration:3000});
+        this.getUsers();
+      })
+    },
+    ()=>{
+
+    })
+
   }
 
 }
